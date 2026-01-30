@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CSS Parser Tests</title>
+  <link rel="stylesheet" type="text/css" href="styles.css"/>
+</head>
+<body>
+
+<h1>CSS Parser Test Cases</h1>
+
+<p>This EPUB tests all supported CSS properties with various units and formats. Each section is labeled with the CSS being tested.</p>
+
+<!-- ============================================ -->
+<h2>1. TEXT-INDENT TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 1.1: text-indent: 0</b></p>
+<p class="indent-0">This paragraph has text-indent: 0. It should have NO indentation, not even the fallback EmSpace. The first line should start at the left edge.</p>
+
+<p><b>Test 1.2: text-indent: 0px</b></p>
+<p class="indent-0px">This paragraph has text-indent: 0px. Same as above, zero pixels means no indent.</p>
+
+<p><b>Test 1.3: text-indent: 20px</b></p>
+<p class="indent-20px">This paragraph has text-indent: 20px. The first line should be indented by 20 pixels from the left edge.</p>
+
+<p><b>Test 1.4: text-indent: 1em</b></p>
+<p class="indent-1em">This paragraph has text-indent: 1em. Should be indented by approximately 16 pixels (1 em = 16px default).</p>
+
+<p><b>Test 1.5: text-indent: 1.5em</b></p>
+<p class="indent-1-5em">This paragraph has text-indent: 1.5em. Should be indented by approximately 24 pixels.</p>
+
+<p><b>Test 1.6: text-indent: 2rem</b></p>
+<p class="indent-2rem">This paragraph has text-indent: 2rem. Should be indented by approximately 32 pixels.</p>
+
+<p><b>Test 1.7: text-indent: 12pt</b></p>
+<p class="indent-12pt">This paragraph has text-indent: 12pt. Should be indented by approximately 16 pixels (12 * 1.33).</p>
+
+<p><b>Test 1.8: text-indent: -10px (negative)</b></p>
+<p class="indent-negative">This paragraph has text-indent: -10px. Negative indent - first line may extend left.</p>
+
+<!-- ============================================ -->
+<h2>2. TEXT-ALIGN TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 2.1: text-align: left</b></p>
+<p class="align-left">This paragraph has text-align: left. The text should be aligned to the left edge. Here is some additional text to make the paragraph longer so we can see the alignment effect on multiple lines of text.</p>
+
+<p><b>Test 2.2: text-align: right</b></p>
+<p class="align-right">This paragraph has text-align: right. The text should be aligned to the right edge. Here is some additional text to make the paragraph longer so we can see the alignment effect on multiple lines.</p>
+
+<p><b>Test 2.3: text-align: center</b></p>
+<p class="align-center">This paragraph has text-align: center. The text should be centered. Here is some additional text to make the paragraph longer so we can see the centering effect.</p>
+
+<p><b>Test 2.4: text-align: justify</b></p>
+<p class="align-justify">This paragraph has text-align: justify. The text should be justified with even spacing between words. Here is some additional text to make the paragraph longer so we can see the justification effect on multiple lines of text in the paragraph.</p>
+
+<p><b>Test 2.5: text-align: start</b></p>
+<p class="align-start">This paragraph has text-align: start. Should behave like left for LTR text.</p>
+
+<p><b>Test 2.6: text-align: end</b></p>
+<p class="align-end">This paragraph has text-align: end. Should behave like right for LTR text.</p>
+
+<!-- ============================================ -->
+<h2>3. FONT-STYLE TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 3.1: font-style: normal</b></p>
+<p class="font-normal">This paragraph has font-style: normal. Text should appear in regular upright style.</p>
+
+<p><b>Test 3.2: font-style: italic</b></p>
+<p class="font-italic">This paragraph has font-style: italic. Text should appear in italic style.</p>
+
+<p><b>Test 3.3: font-style: oblique</b></p>
+<p class="font-oblique">This paragraph has font-style: oblique. Should render as italic.</p>
+
+<!-- ============================================ -->
+<h2>4. FONT-WEIGHT TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 4.1: font-weight: normal</b></p>
+<p class="weight-normal">This paragraph has font-weight: normal. Text should appear in regular weight.</p>
+
+<p><b>Test 4.2: font-weight: bold</b></p>
+<p class="weight-bold">This paragraph has font-weight: bold. Text should appear in bold.</p>
+
+<p><b>Test 4.3: font-weight: bolder</b></p>
+<p class="weight-bolder">This paragraph has font-weight: bolder. Should render as bold.</p>
+
+<p><b>Test 4.4: font-weight: lighter</b></p>
+<p class="weight-lighter">This paragraph has font-weight: lighter. Should render as normal.</p>
+
+<p><b>Test 4.5: font-weight: 400</b></p>
+<p class="weight-400">This paragraph has font-weight: 400. Should render as normal (400 = normal).</p>
+
+<p><b>Test 4.6: font-weight: 700</b></p>
+<p class="weight-700">This paragraph has font-weight: 700. Should render as bold (700 = bold).</p>
+
+<p><b>Test 4.7: font-weight: 900</b></p>
+<p class="weight-900">This paragraph has font-weight: 900. Should render as bold (900 &gt;= 700).</p>
+
+<!-- ============================================ -->
+<h2>5. TEXT-DECORATION TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 5.1: text-decoration: none</b></p>
+<p class="decoration-none">This paragraph has text-decoration: none. No underline should appear.</p>
+
+<p><b>Test 5.2: text-decoration: underline</b></p>
+<p class="decoration-underline">This paragraph has text-decoration: underline. Text should be underlined.</p>
+
+<p><b>Test 5.3: text-decoration-line: underline</b></p>
+<p class="decoration-line-underline">This paragraph has text-decoration-line: underline. Should also be underlined.</p>
+
+<!-- ============================================ -->
+<h2>6. MARGIN-TOP TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 6.1: margin-top: 0</b></p>
+<p class="margin-top-0">This paragraph has margin-top: 0. No extra space above.</p>
+
+<p><b>Test 6.2: margin-top: 10px</b></p>
+<p class="margin-top-10px">This paragraph has margin-top: 10px. Should have 10px space above.</p>
+
+<p><b>Test 6.3: margin-top: 20px</b></p>
+<p class="margin-top-20px">This paragraph has margin-top: 20px. Should have 20px space above.</p>
+
+<p><b>Test 6.4: margin-top: 1em</b></p>
+<p class="margin-top-1em">This paragraph has margin-top: 1em. Should have ~16px space above.</p>
+
+<p><b>Test 6.5: margin-top: 2em</b></p>
+<p class="margin-top-2em">This paragraph has margin-top: 2em. Should have ~32px space above.</p>
+
+<p><b>Test 6.6: margin-top: 1rem</b></p>
+<p class="margin-top-1rem">This paragraph has margin-top: 1rem. Should have ~16px space above.</p>
+
+<p><b>Test 6.7: margin-top: 12pt</b></p>
+<p class="margin-top-12pt">This paragraph has margin-top: 12pt. Should have ~16px space above.</p>
+
+<!-- ============================================ -->
+<h2>7. MARGIN-BOTTOM TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 7.1: margin-bottom: 0</b></p>
+<p class="margin-bottom-0">This paragraph has margin-bottom: 0. No extra space below.</p>
+
+<p><b>Test 7.2: margin-bottom: 10px</b></p>
+<p class="margin-bottom-10px">This paragraph has margin-bottom: 10px. Should have 10px space below.</p>
+
+<p><b>Test 7.3: margin-bottom: 1em</b></p>
+<p class="margin-bottom-1em">This paragraph has margin-bottom: 1em. Should have ~16px space below.</p>
+
+<p>This is a normal paragraph after the margin-bottom tests.</p>
+
+<!-- ============================================ -->
+<h2>8. MARGIN-LEFT TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 8.1: margin-left: 0</b></p>
+<p class="margin-left-0">This paragraph has margin-left: 0. Should start at the left edge.</p>
+
+<p><b>Test 8.2: margin-left: 20px</b></p>
+<p class="margin-left-20px">This paragraph has margin-left: 20px. Should be indented 20px from left. This is a longer paragraph to show how the entire block is shifted, not just the first line.</p>
+
+<p><b>Test 8.3: margin-left: 40px</b></p>
+<p class="margin-left-40px">This paragraph has margin-left: 40px. Should be indented 40px from left. More text to demonstrate the block-level indentation.</p>
+
+<p><b>Test 8.4: margin-left: 2em</b></p>
+<p class="margin-left-2em">This paragraph has margin-left: 2em. Should be indented ~32px from left.</p>
+
+<!-- ============================================ -->
+<h2>9. MARGIN-RIGHT TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 9.1: margin-right: 0</b></p>
+<p class="margin-right-0">This paragraph has margin-right: 0. Should extend to the right edge. Here is additional text to fill the line and show the margin effect.</p>
+
+<p><b>Test 9.2: margin-right: 20px</b></p>
+<p class="margin-right-20px">This paragraph has margin-right: 20px. Text should stop 20px before the right edge. Adding more text to demonstrate this effect clearly.</p>
+
+<p><b>Test 9.3: margin-right: 2em</b></p>
+<p class="margin-right-2em">This paragraph has margin-right: 2em. Text should stop ~32px before the right edge.</p>
+
+<!-- ============================================ -->
+<h2>10. MARGIN SHORTHAND TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 10.1: margin: 10px (1 value - all sides)</b></p>
+<p class="margin-1val-10px">This paragraph has margin: 10px. All four sides should have 10px margin. The text block is inset from all edges.</p>
+
+<p><b>Test 10.2: margin: 1em (1 value - all sides)</b></p>
+<p class="margin-1val-1em">This paragraph has margin: 1em. All four sides should have ~16px margin.</p>
+
+<p><b>Test 10.3: margin: 10px 20px (2 values - vertical | horizontal)</b></p>
+<p class="margin-2val-10px-20px">This paragraph has margin: 10px 20px. Top/bottom: 10px, left/right: 20px. Notice the horizontal inset is larger than vertical.</p>
+
+<p><b>Test 10.4: margin: 1em 2em (2 values)</b></p>
+<p class="margin-2val-1em-2em">This paragraph has margin: 1em 2em. Top/bottom: ~16px, left/right: ~32px.</p>
+
+<p><b>Test 10.5: margin: 10px 20px 30px (3 values - top | horizontal | bottom)</b></p>
+<p class="margin-3val-10px-20px-30px">This paragraph has margin: 10px 20px 30px. Top: 10px, left/right: 20px, bottom: 30px.</p>
+
+<p><b>Test 10.6: margin: 10px 20px 30px 40px (4 values - top | right | bottom | left)</b></p>
+<p class="margin-4val-10px-20px-30px-40px">This paragraph has margin: 10px 20px 30px 40px. Top: 10px, right: 20px, bottom: 30px, left: 40px. Note the asymmetric appearance.</p>
+
+<p><b>Test 10.7: margin: 5px 1em 10px 2em (4 values - mixed units)</b></p>
+<p class="margin-4val-mixed">This paragraph has margin: 5px 1em 10px 2em. Mixed pixel and em units in a single shorthand.</p>
+
+<p><b>Test 10.8: margin: 30px 0px 0 0 (4 values - zeros with/without units)</b></p>
+<p class="margin-4val-zeros">This paragraph has margin: 30px 0px 0 0. Tests parsing zeros with and without units. Only top margin (30px) should be visible.</p>
+
+<p><b>Test 10.9: margin: 0 20px 0 20px (4 values - alternating zeros)</b></p>
+<p class="margin-4val-zero-mix">This paragraph has margin: 0 20px 0 20px. No vertical margin, 20px horizontal margin on both sides.</p>
+
+<!-- ============================================ -->
+<h2>11. PADDING-TOP TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 11.1: padding-top: 0</b></p>
+<p class="padding-top-0">This paragraph has padding-top: 0. No extra space above.</p>
+
+<p><b>Test 11.2: padding-top: 10px</b></p>
+<p class="padding-top-10px">This paragraph has padding-top: 10px. Should have 10px space above.</p>
+
+<p><b>Test 11.3: padding-top: 1em</b></p>
+<p class="padding-top-1em">This paragraph has padding-top: 1em. Should have ~16px space above.</p>
+
+<!-- ============================================ -->
+<h2>12. PADDING-BOTTOM TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 12.1: padding-bottom: 0</b></p>
+<p class="padding-bottom-0">This paragraph has padding-bottom: 0. No extra space below.</p>
+
+<p><b>Test 12.2: padding-bottom: 10px</b></p>
+<p class="padding-bottom-10px">This paragraph has padding-bottom: 10px. Should have 10px space below.</p>
+
+<p>Normal paragraph after padding-bottom tests.</p>
+
+<!-- ============================================ -->
+<h2>13. PADDING-LEFT TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 13.1: padding-left: 0</b></p>
+<p class="padding-left-0">This paragraph has padding-left: 0. Should start at the left edge.</p>
+
+<p><b>Test 13.2: padding-left: 20px</b></p>
+<p class="padding-left-20px">This paragraph has padding-left: 20px. Entire block should be indented 20px from left.</p>
+
+<p><b>Test 13.3: padding-left: 2em</b></p>
+<p class="padding-left-2em">This paragraph has padding-left: 2em. Entire block should be indented ~32px from left.</p>
+
+<!-- ============================================ -->
+<h2>14. PADDING-RIGHT TESTS (Individual Property)</h2>
+<!-- ============================================ -->
+
+<p><b>Test 14.1: padding-right: 0</b></p>
+<p class="padding-right-0">This paragraph has padding-right: 0. Should extend to the right edge.</p>
+
+<p><b>Test 14.2: padding-right: 20px</b></p>
+<p class="padding-right-20px">This paragraph has padding-right: 20px. Text should stop 20px before right edge. More text to fill the line.</p>
+
+<!-- ============================================ -->
+<h2>15. PADDING SHORTHAND TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 15.1: padding: 10px (1 value)</b></p>
+<p class="padding-1val-10px">This paragraph has padding: 10px. All sides get 10px padding. The text block is inset from all edges.</p>
+
+<p><b>Test 15.2: padding: 10px 20px (2 values)</b></p>
+<p class="padding-2val-10px-20px">This paragraph has padding: 10px 20px. Top/bottom: 10px, left/right: 20px.</p>
+
+<p><b>Test 15.3: padding: 5px 15px 25px (3 values)</b></p>
+<p class="padding-3val-5px-15px-25px">This paragraph has padding: 5px 15px 25px. Top: 5px, left/right: 15px, bottom: 25px.</p>
+
+<p><b>Test 15.4: padding: 5px 10px 15px 20px (4 values)</b></p>
+<p class="padding-4val-5px-10px-15px-20px">This paragraph has padding: 5px 10px 15px 20px. Top: 5px, right: 10px, bottom: 15px, left: 20px.</p>
+
+<!-- ============================================ -->
+<h2>16. COMBINED PROPERTY TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 16.1: text-indent + text-align combined</b></p>
+<p class="combined-indent-align">This paragraph has text-indent: 2em and text-align: justify. The first line should be indented and all text should be justified. Here is more text to demonstrate both effects working together in a single paragraph.</p>
+
+<p><b>Test 16.2: margin + padding combined</b></p>
+<p class="combined-margin-padding">This paragraph has margin: 10px 20px and padding: 5px 15px. Both margins and padding affect the positioning. The total horizontal inset should be margin + padding on each side.</p>
+
+<p><b>Test 16.3: All properties combined</b></p>
+<p class="combined-all">This paragraph has text-indent: 1em, text-align: left, font-style: italic, font-weight: bold, margin: 10px 30px, and padding: 5px 20px. Multiple CSS properties working together.</p>
+
+<!-- ============================================ -->
+<h2>17. ELEMENT SELECTOR TEST</h2>
+<!-- ============================================ -->
+
+<p><b>Test 17.1: blockquote element styling</b></p>
+<blockquote>This is a blockquote element. It should have margin-left: 30px, margin-right: 30px, and font-style: italic applied via element selector (not class).</blockquote>
+
+<!-- ============================================ -->
+<h2>18. EDGE CASE TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 18.1: Decimal pixel values</b></p>
+<p class="edge-decimal-px">This paragraph has margin-top: 10.5px and text-indent: 15.75px. Tests decimal/fractional pixel values.</p>
+
+<p><b>Test 18.2: Large margin values</b></p>
+<p class="edge-large-values">This paragraph has margin-left: 100px and margin-right: 100px. Tests large inset values - text should be significantly narrower.</p>
+
+<p><b>Test 18.3: All zeros</b></p>
+<p class="edge-all-zeros">This paragraph has margin: 0 0 0 0, padding: 0 0 0 0, text-indent: 0. All spacing explicitly set to zero.</p>
+
+<!-- ============================================ -->
+<h2>END OF TESTS</h2>
+<!-- ============================================ -->
+
+<p>If you've reached this point, all CSS test cases have been rendered. Compare each section against the expected behavior described in the test labels.</p>
+
+</body>
+</html>
