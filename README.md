@@ -7,7 +7,7 @@ This is an EPUB generated with help from Claude to test out CSS parsing capabili
 Clone this repo. Then, from the root directory, run:
 
 ```bash
-zip -X0 css-test.epub css-test/mimetype && zip -rX9 css-test.epub css-test/META-INF css-test/OEBPS
+zip -0 css-test.epub css-test/mimetype && zip -r9 css-test.epub css-test/META-INF css-test/OEBPS
 ```
 
 
