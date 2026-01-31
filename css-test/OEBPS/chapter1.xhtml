@@ -25,13 +25,13 @@
 <p class="indent-20px">This paragraph has text-indent: 20px. The first line should be indented by 20 pixels from the left edge.</p>
 
 <p><b>Test 1.4: text-indent: 1em</b></p>
-<p class="indent-1em">This paragraph has text-indent: 1em. Should be indented by approximately 16 pixels (1 em = 16px default).</p>
+<p class="indent-1em">This paragraph has text-indent: 1em. Should be indented by 1 line height (scales with your font size setting).</p>
 
 <p><b>Test 1.5: text-indent: 1.5em</b></p>
-<p class="indent-1-5em">This paragraph has text-indent: 1.5em. Should be indented by approximately 24 pixels.</p>
+<p class="indent-1-5em">This paragraph has text-indent: 1.5em. Should be indented by 1.5 line heights (scales with your font size setting).</p>
 
 <p><b>Test 1.6: text-indent: 2rem</b></p>
-<p class="indent-2rem">This paragraph has text-indent: 2rem. Should be indented by approximately 32 pixels.</p>
+<p class="indent-2rem">This paragraph has text-indent: 2rem. Should be indented by 2 line heights (scales with your font size setting).</p>
 
 <p><b>Test 1.7: text-indent: 12pt</b></p>
 <p class="indent-12pt">This paragraph has text-indent: 12pt. Should be indented by approximately 16 pixels (12 * 1.33).</p>
@@ -126,13 +126,13 @@
 <p class="margin-top-20px">This paragraph has margin-top: 20px. Should have 20px space above.</p>
 
 <p><b>Test 6.4: margin-top: 1em</b></p>
-<p class="margin-top-1em">This paragraph has margin-top: 1em. Should have ~16px space above.</p>
+<p class="margin-top-1em">This paragraph has margin-top: 1em. Should have 1 line height of space above (scales with font size).</p>
 
 <p><b>Test 6.5: margin-top: 2em</b></p>
-<p class="margin-top-2em">This paragraph has margin-top: 2em. Should have ~32px space above.</p>
+<p class="margin-top-2em">This paragraph has margin-top: 2em. Should have 2 line heights of space above (scales with font size).</p>
 
 <p><b>Test 6.6: margin-top: 1rem</b></p>
-<p class="margin-top-1rem">This paragraph has margin-top: 1rem. Should have ~16px space above.</p>
+<p class="margin-top-1rem">This paragraph has margin-top: 1rem. Should have 1 line height of space above (scales with font size).</p>
 
 <p><b>Test 6.7: margin-top: 12pt</b></p>
 <p class="margin-top-12pt">This paragraph has margin-top: 12pt. Should have ~16px space above.</p>
@@ -148,7 +148,7 @@
 <p class="margin-bottom-10px">This paragraph has margin-bottom: 10px. Should have 10px space below.</p>
 
 <p><b>Test 7.3: margin-bottom: 1em</b></p>
-<p class="margin-bottom-1em">This paragraph has margin-bottom: 1em. Should have ~16px space below.</p>
+<p class="margin-bottom-1em">This paragraph has margin-bottom: 1em. Should have 1 line height of space below (scales with font size).</p>
 
 <p>This is a normal paragraph after the margin-bottom tests.</p>
 
@@ -166,7 +166,7 @@
 <p class="margin-left-40px">This paragraph has margin-left: 40px. Should be indented 40px from left. More text to demonstrate the block-level indentation.</p>
 
 <p><b>Test 8.4: margin-left: 2em</b></p>
-<p class="margin-left-2em">This paragraph has margin-left: 2em. Should be indented ~32px from left.</p>
+<p class="margin-left-2em">This paragraph has margin-left: 2em. Should be indented 2 line heights from left (scales with font size).</p>
 
 <!-- ============================================ -->
 <h2>9. MARGIN-RIGHT TESTS (Individual Property)</h2>
@@ -179,7 +179,7 @@
 <p class="margin-right-20px">This paragraph has margin-right: 20px. Text should stop 20px before the right edge. Adding more text to demonstrate this effect clearly.</p>
 
 <p><b>Test 9.3: margin-right: 2em</b></p>
-<p class="margin-right-2em">This paragraph has margin-right: 2em. Text should stop ~32px before the right edge.</p>
+<p class="margin-right-2em">This paragraph has margin-right: 2em. Text should stop 2 line heights before the right edge (scales with font size).</p>
 
 <!-- ============================================ -->
 <h2>10. MARGIN SHORTHAND TESTS</h2>
@@ -189,13 +189,13 @@
 <p class="margin-1val-10px">This paragraph has margin: 10px. All four sides should have 10px margin. The text block is inset from all edges.</p>
 
 <p><b>Test 10.2: margin: 1em (1 value - all sides)</b></p>
-<p class="margin-1val-1em">This paragraph has margin: 1em. All four sides should have ~16px margin.</p>
+<p class="margin-1val-1em">This paragraph has margin: 1em. All four sides should have 1 line height of margin (scales with font size).</p>
 
 <p><b>Test 10.3: margin: 10px 20px (2 values - vertical | horizontal)</b></p>
 <p class="margin-2val-10px-20px">This paragraph has margin: 10px 20px. Top/bottom: 10px, left/right: 20px. Notice the horizontal inset is larger than vertical.</p>
 
 <p><b>Test 10.4: margin: 1em 2em (2 values)</b></p>
-<p class="margin-2val-1em-2em">This paragraph has margin: 1em 2em. Top/bottom: ~16px, left/right: ~32px.</p>
+<p class="margin-2val-1em-2em">This paragraph has margin: 1em 2em. Top/bottom: 1 line height, left/right: 2 line heights (scales with font size).</p>
 
 <p><b>Test 10.5: margin: 10px 20px 30px (3 values - top | horizontal | bottom)</b></p>
 <p class="margin-3val-10px-20px-30px">This paragraph has margin: 10px 20px 30px. Top: 10px, left/right: 20px, bottom: 30px.</p>
@@ -223,7 +223,7 @@
 <p class="padding-top-10px">This paragraph has padding-top: 10px. Should have 10px space above.</p>
 
 <p><b>Test 11.3: padding-top: 1em</b></p>
-<p class="padding-top-1em">This paragraph has padding-top: 1em. Should have ~16px space above.</p>
+<p class="padding-top-1em">This paragraph has padding-top: 1em. Should have 1 line height of space above (scales with font size).</p>
 
 <!-- ============================================ -->
 <h2>12. PADDING-BOTTOM TESTS (Individual Property)</h2>
@@ -248,7 +248,7 @@
 <p class="padding-left-20px">This paragraph has padding-left: 20px. Entire block should be indented 20px from left.</p>
 
 <p><b>Test 13.3: padding-left: 2em</b></p>
-<p class="padding-left-2em">This paragraph has padding-left: 2em. Entire block should be indented ~32px from left.</p>
+<p class="padding-left-2em">This paragraph has padding-left: 2em. Entire block should be indented 2 line heights from left (scales with font size).</p>
 
 <!-- ============================================ -->
 <h2>14. PADDING-RIGHT TESTS (Individual Property)</h2>
