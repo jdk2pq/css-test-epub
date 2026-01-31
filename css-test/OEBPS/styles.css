@@ -392,3 +392,40 @@ blockquote {
   padding: 0 0 0 0;
   text-indent: 0;
 }
+
+/* ===========================================
+   NESTED BLOCK ELEMENT TESTS
+   Tests margin accumulation from parent containers
+   =========================================== */
+
+/* Parent div with margin-bottom, child h3 with no margin */
+.nested-div-margin {
+  margin-bottom: 2em;
+}
+
+.nested-h3-no-margin {
+  margin: 0;
+  text-align: center;
+}
+
+/* Parent div with margin-left, child p with additional margin-left */
+.nested-div-margin-left {
+  margin-left: 20px;
+}
+
+.nested-p-margin-left {
+  margin-left: 15px;
+}
+
+/* Double-nested divs with margins */
+.nested-outer {
+  margin-left: 15px;
+}
+
+.nested-inner {
+  margin-left: 15px;
+}
+
+.nested-content {
+  margin: 0;
+}

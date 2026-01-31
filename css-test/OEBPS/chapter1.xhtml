@@ -297,17 +297,67 @@
 <blockquote>This is a blockquote element. It should have margin-left: 30px, margin-right: 30px, and font-style: italic applied via element selector (not class).</blockquote>
 
 <!-- ============================================ -->
-<h2>18. EDGE CASE TESTS</h2>
+<h2>18. NESTED BLOCK ELEMENT TESTS</h2>
 <!-- ============================================ -->
 
-<p><b>Test 18.1: Decimal pixel values</b></p>
+<p><b>Test 18.1: Nested div with margin-bottom wrapping h3</b></p>
+<p>The following heading is inside a div with margin-bottom: 2em. The h3 has margin-bottom: 0. The div's margin should still apply.</p>
+<div class="nested-div-margin">
+  <h3 class="nested-h3-no-margin">Heading inside div</h3>
+</div>
+<p>This paragraph should have extra space above it (from the div's margin-bottom: 2em).</p>
+
+<p><b>Test 18.2: Nested div with margin-left wrapping paragraph</b></p>
+<div class="nested-div-margin-left">
+  <p class="nested-p-margin-left">This paragraph is inside a div with margin-left: 20px. The paragraph itself has margin-left: 15px. Total indent should be 35px.</p>
+</div>
+
+<p><b>Test 18.3: Double-nested divs with margins</b></p>
+<div class="nested-outer">
+  <div class="nested-inner">
+    <p class="nested-content">This text is inside two nested divs. Outer has margin-left: 15px, inner has margin-left: 15px. Total should be 30px indent.</p>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<h2>19. EDGE CASE TESTS</h2>
+<!-- ============================================ -->
+
+<p><b>Test 19.1: Decimal pixel values</b></p>
 <p class="edge-decimal-px">This paragraph has margin-top: 10.5px and text-indent: 15.75px. Tests decimal/fractional pixel values.</p>
 
-<p><b>Test 18.2: Large margin values</b></p>
+<p><b>Test 19.2: Large margin values</b></p>
 <p class="edge-large-values">This paragraph has margin-left: 100px and margin-right: 100px. Tests large inset values - text should be significantly narrower.</p>
 
-<p><b>Test 18.3: All zeros</b></p>
+<p><b>Test 19.3: All zeros</b></p>
 <p class="edge-all-zeros">This paragraph has margin: 0 0 0 0, padding: 0 0 0 0, text-indent: 0. All spacing explicitly set to zero.</p>
+
+<!-- ============================================ -->
+<h2>20. PUNCTUATION ATTACHMENT TESTS</h2>
+<!-- ============================================ -->
+
+<p>These tests verify that punctuation attaches correctly to the preceding word when inline styles end.</p>
+
+<p><b>Test 20.1: Period after italic span</b></p>
+<p>The word <span class="font-italic">italic</span>. should have the period directly after it with no space.</p>
+
+<p><b>Test 20.2: Comma after bold span</b></p>
+<p>The word <span class="weight-bold">bold</span>, followed by more text, should have no space before the comma.</p>
+
+<p><b>Test 20.3: Multiple punctuation marks</b></p>
+<p>An <span class="font-italic">exclamation</span>! And a <span class="weight-bold">question</span>? Both should attach properly.</p>
+
+<p><b>Test 20.4: Closing quote after styled text</b></p>
+<p>She said "<span class="font-italic">hello</span>" to everyone. The closing quote should attach to "hello".</p>
+
+<p><b>Test 20.5: Semicolon and colon</b></p>
+<p>A <span class="weight-bold">list</span>: item one; <span class="font-italic">item two</span>; item three. Colons and semicolons should attach.</p>
+
+<p><b>Test 20.6: Closing parenthesis and bracket</b></p>
+<p>See the reference (<span class="font-italic">Smith, 2024</span>) and the index [<span class="weight-bold">page 42</span>] for details.</p>
+
+<p><b>Test 20.7: Justified text with punctuation</b></p>
+<p class="align-justify">This is a longer paragraph with <span class="font-italic">styled text</span>, and it has punctuation after inline styles. The justification should still work correctly, distributing space evenly between actual words while keeping punctuation attached. Here is more text to ensure the line wraps and justification is visible.</p>
 
 <!-- ============================================ -->
 <h2>END OF TESTS</h2>
