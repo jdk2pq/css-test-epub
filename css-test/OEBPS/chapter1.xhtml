@@ -360,6 +360,86 @@
 <p class="align-justify">This is a longer paragraph with <span class="font-italic">styled text</span>, and it has punctuation after inline styles. The justification should still work correctly, distributing space evenly between actual words while keeping punctuation attached. Here is more text to ensure the line wraps and justification is visible.</p>
 
 <!-- ============================================ -->
+<h2>21. INLINE ELEMENT CONTINUATION TESTS</h2>
+<!-- ============================================ -->
+
+<p>These tests verify that inline HTML elements do not introduce spurious spaces. Word fragments split by inline styling should render as a single visual word with zero spacing between fragments.</p>
+
+<h3>21A. Mid-Word Styling (startElement flush)</h3>
+
+<p><b>Test 21.1: Mid-word italic — fan&lt;em&gt;tas&lt;/em&gt;tic</b></p>
+<p>The word fan<em>tas</em>tic should render as one word with "tas" in italic. No spaces between "fan", "tas", and "tic".</p>
+
+<p><b>Test 21.2: Mid-word bold — un&lt;b&gt;believ&lt;/b&gt;able</b></p>
+<p>The word un<b>believ</b>able should render as one word with "believ" in bold. No spaces between fragments.</p>
+
+<p><b>Test 21.3: Mid-word underline — extra&lt;u&gt;ordi&lt;/u&gt;nary</b></p>
+<p>The word extra<u>ordi</u>nary should render as one word with "ordi" underlined. No spaces between fragments.</p>
+
+<p><b>Test 21.4: Mid-word CSS italic span — in&lt;span class=italic&gt;cred&lt;/span&gt;ible</b></p>
+<p>The word in<span class="font-italic">cred</span>ible should render as one word with "cred" in italic. No spaces between fragments.</p>
+
+<h3>21B. Punctuation After Styled Text (endElement continuation)</h3>
+
+<p><b>Test 21.5: Comma directly after em — do&lt;em&gt;,&lt;/em&gt;</b></p>
+<p>Here we do<em>,</em> don't we? The comma after "do" should attach directly with no space.</p>
+
+<p><b>Test 21.6: Period directly after bold — end&lt;b&gt;.&lt;/b&gt;</b></p>
+<p>This sentence has a styled end<b>.</b> The period should attach to "end" with no space.</p>
+
+<p><b>Test 21.7: Exclamation after italic — wow&lt;em&gt;!&lt;/em&gt;</b></p>
+<p>That was wow<em>!</em> The exclamation should attach to "wow" with no space.</p>
+
+<h3>21C. Consecutive Inline Elements (chained continuations)</h3>
+
+<p><b>Test 21.8: Bold then italic no space — &lt;b&gt;bold&lt;/b&gt;&lt;em&gt;italic&lt;/em&gt;</b></p>
+<p>The compound <b>bold</b><em>italic</em> should render as one word "bolditalic" with bold then italic, no space between them.</p>
+
+<p><b>Test 21.9: Three styles chained — &lt;b&gt;A&lt;/b&gt;&lt;em&gt;B&lt;/em&gt;&lt;u&gt;C&lt;/u&gt;</b></p>
+<p>The letters <b>A</b><em>B</em><u>C</u> should render as "ABC" with no spaces, each letter in its own style.</p>
+
+<p><b>Test 21.10: Styled punctuation chain — do&lt;em&gt;,&lt;/em&gt;&lt;b&gt;!&lt;/b&gt;</b></p>
+<p>Multiple punctuation: do<em>,</em><b>!</b> next word. "do,!" should have no internal spaces.</p>
+
+<h3>21D. Space Boundaries (continuation reset)</h3>
+
+<p><b>Test 21.11: Space between styled words — &lt;em&gt;first&lt;/em&gt; &lt;b&gt;second&lt;/b&gt;</b></p>
+<p>Two styled words: <em>first</em> <b>second</b> should have normal space between them. They are separate words.</p>
+
+<p><b>Test 21.12: Space before styled continuation — word &lt;em&gt;styled&lt;/em&gt;next</b></p>
+<p>Here is word <em>styled</em>next as a test. "word" is separate, but "styled" and "next" should attach (no space between them).</p>
+
+<p><b>Test 21.13: Styled text with space after — &lt;em&gt;styled&lt;/em&gt; next</b></p>
+<p>Here is <em>styled</em> next as a test. "styled" and "next" should have a normal space between them.</p>
+
+<h3>21E. Nested Inline Elements</h3>
+
+<p><b>Test 21.14: Nested bold inside italic — &lt;em&gt;ital&lt;b&gt;bold&lt;/b&gt;ital&lt;/em&gt;</b></p>
+<p>The word <em>ital<b>bold</b>ital</em> should render as one word "italboldital" with the middle portion in bold+italic.</p>
+
+<p><b>Test 21.15: Nested span inside em — &lt;em&gt;soft&lt;span class=bold&gt;hard&lt;/span&gt;soft&lt;/em&gt;</b></p>
+<p>The word <em>soft<span class="weight-bold">hard</span>soft</em> should render as "softhardsoft" with no spaces.</p>
+
+<h3>21F. Justified Text Stress Test</h3>
+
+<p><b>Test 21.16: Justified paragraph with many inline continuations</b></p>
+<p class="align-justify">In this justified paragraph, every in<em>line</em> element should pro<b>duce</b> correct word bound<em>aries</em> without spurious spaces. The word "inline" should appear as one word, "produce" as one word, and "boundaries" as one word. Justification should distribute space only between actual words, not between word fragments that belong together. This sentence has enough text to wrap onto multiple lines so the justification effect is clearly visible and we can verify that extra<u>ordi</u>nary spacing is not introduced by the inline elements.</p>
+
+<h3>21G. Real-World Patterns</h3>
+
+<p><b>Test 21.17: Book-style dialogue with styled attribution</b></p>
+<p>"I don't think so<em>,</em>" she said<em>.</em> "Not today<em>.</em>"</p>
+
+<p><b>Test 21.18: Possessive after styled word</b></p>
+<p>It was <em>Shakespeare</em>'s greatest work. The apostrophe-s should attach to "Shakespeare".</p>
+
+<p><b>Test 21.19: Hyphenated compound with mid-style</b></p>
+<p>The <b>well</b>-known author wrote a <em>best</em>-selling novel. Hyphens should attach to surrounding fragments.</p>
+
+<p><b>Test 21.20: Contraction spanning inline element</b></p>
+<p>I <em>can</em>'t believe it<em>!</em> The "'t" should attach to "can" and "!" should attach to "it".</p>
+
+<!-- ============================================ -->
 <h2>END OF TESTS</h2>
 <!-- ============================================ -->
 
