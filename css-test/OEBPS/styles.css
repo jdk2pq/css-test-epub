@@ -40,6 +40,26 @@
 }
 
 /* ===========================================
+   TEXT-INDENT PERCENTAGE TESTS
+   =========================================== */
+
+.indent-5pct {
+  text-indent: 5%;
+}
+
+.indent-10pct {
+  text-indent: 10%;
+}
+
+.indent-0pct {
+  text-indent: 0%;
+}
+
+.indent-2-5pct {
+  text-indent: 2.5%;
+}
+
+/* ===========================================
    TEXT-ALIGN TESTS
    =========================================== */
 
@@ -216,6 +236,35 @@
 }
 
 /* ===========================================
+   MARGIN PERCENTAGE TESTS
+   =========================================== */
+
+.margin-left-5pct {
+  margin-left: 5%;
+}
+
+.margin-right-5pct {
+  margin-right: 5%;
+}
+
+.margin-left-10pct {
+  margin-left: 10%;
+}
+
+.margin-top-5pct {
+  margin-top: 5%;
+}
+
+.margin-bottom-5pct {
+  margin-bottom: 5%;
+}
+
+.margin-lr-10pct {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* ===========================================
    MARGIN SHORTHAND TESTS
    =========================================== */
 
@@ -317,6 +366,23 @@
 }
 
 /* ===========================================
+   PADDING PERCENTAGE TESTS
+   =========================================== */
+
+.padding-left-5pct {
+  padding-left: 5%;
+}
+
+.padding-right-5pct {
+  padding-right: 5%;
+}
+
+.padding-lr-10pct {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* ===========================================
    PADDING SHORTHAND TESTS
    =========================================== */
 
@@ -338,6 +404,27 @@
 /* 4 values: top | right | bottom | left */
 .padding-4val-5px-10px-15px-20px {
   padding: 5px 10px 15px 20px;
+}
+
+/* ===========================================
+   PERCENTAGE SHORTHAND TESTS
+   =========================================== */
+
+/* margin shorthand with percentage */
+.margin-2val-10px-5pct {
+  margin: 10px 5%;
+}
+
+/* padding shorthand with percentage */
+.padding-2val-0-5pct {
+  padding: 0 5%;
+}
+
+/* Combined percentage indent + margin */
+.pct-indent-margin {
+  text-indent: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 /* ===========================================

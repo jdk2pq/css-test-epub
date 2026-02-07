@@ -440,6 +440,82 @@
 <p>I <em>can</em>'t believe it<em>!</em> The "'t" should attach to "can" and "!" should attach to "it".</p>
 
 <!-- ============================================ -->
+<h2>22. PERCENTAGE UNIT TESTS</h2>
+<!-- ============================================ -->
+
+<p>These tests verify that CSS percentage units resolve correctly against the viewport width. On a 600px viewport, 5% = 30px, 10% = 60px.</p>
+
+<h3>22A. Text-Indent Percentage</h3>
+
+<p><b>Test 22.1: text-indent: 5%</b></p>
+<p class="indent-5pct">This paragraph has text-indent: 5%. The first line should be indented by 5% of the viewport width (e.g. ~30px on a 600px display). This is the most common percentage indent found in EPUBs. Previously this rendered as only 5px (nearly invisible).</p>
+
+<p><b>Test 22.2: text-indent: 10%</b></p>
+<p class="indent-10pct">This paragraph has text-indent: 10%. The first line should be indented by 10% of the viewport width (e.g. ~60px on a 600px display). This should be noticeably wider than the 5% test above.</p>
+
+<p><b>Test 22.3: text-indent: 0%</b></p>
+<p class="indent-0pct">This paragraph has text-indent: 0%. Zero percent should resolve to 0px and suppress the EmSpace fallback indent. The first line should start flush at the left edge, same as text-indent: 0.</p>
+
+<p><b>Test 22.4: text-indent: 2.5%</b></p>
+<p class="indent-2-5pct">This paragraph has text-indent: 2.5%. Fractional percentage value. Should be ~15px on a 600px viewport. Tests decimal percentage parsing.</p>
+
+<h3>22B. Margin Percentage</h3>
+
+<p><b>Test 22.5: margin-left: 5%</b></p>
+<p class="margin-left-5pct">This paragraph has margin-left: 5%. The entire block should be inset from the left by 5% of viewport width (~30px on 600px). All lines should be shifted, not just the first.</p>
+
+<p><b>Test 22.6: margin-right: 5%</b></p>
+<p class="margin-right-5pct">This paragraph has margin-right: 5%. Text should stop 5% before the right edge. Adding more text to make multiple lines so the right margin effect is visible on wrapped lines.</p>
+
+<p><b>Test 22.7: margin-left: 10%</b></p>
+<p class="margin-left-10pct">This paragraph has margin-left: 10%. Should be inset from the left by 10% of viewport width (~60px on 600px). Wider than the 5% test above.</p>
+
+<p><b>Test 22.8: margin-top: 5%</b></p>
+<p class="margin-top-5pct">This paragraph has margin-top: 5%. Should have 5% of viewport width as top spacing (~30px on 600px). Note: per CSS spec, vertical margins resolve against width, not height.</p>
+
+<p><b>Test 22.9: margin-bottom: 5%</b></p>
+<p class="margin-bottom-5pct">This paragraph has margin-bottom: 5%. Should have 5% of viewport width as bottom spacing.</p>
+<p>This paragraph follows the margin-bottom: 5% test. The gap above should be ~30px on a 600px viewport.</p>
+
+<p><b>Test 22.10: margin-left: 10% + margin-right: 10%</b></p>
+<p class="margin-lr-10pct">This paragraph has both margin-left and margin-right set to 10%. The text block should be 20% narrower total — inset by 10% on each side. Adding more text to make the narrowing effect clearly visible across multiple lines.</p>
+
+<h3>22C. Padding Percentage</h3>
+
+<p><b>Test 22.11: padding-left: 5%</b></p>
+<p class="padding-left-5pct">This paragraph has padding-left: 5%. The entire block should be inset from the left by 5% of viewport width (~30px on 600px), same visual effect as margin-left: 5%.</p>
+
+<p><b>Test 22.12: padding-right: 5%</b></p>
+<p class="padding-right-5pct">This paragraph has padding-right: 5%. Text should stop 5% before the right edge. More text to show the effect on multiple lines clearly.</p>
+
+<p><b>Test 22.13: padding-left: 10% + padding-right: 10%</b></p>
+<p class="padding-lr-10pct">This paragraph has both padding-left and padding-right set to 10%. The text block should be 20% narrower total. Adding more text to make the effect clearly visible.</p>
+
+<h3>22D. Percentage Shorthand</h3>
+
+<p><b>Test 22.14: margin: 10px 5% (shorthand with mixed units)</b></p>
+<p class="margin-2val-10px-5pct">This paragraph has margin: 10px 5%. Top/bottom margins are 10px (absolute), left/right margins are 5% of viewport width. Tests mixed units in shorthand.</p>
+
+<p><b>Test 22.15: padding: 0 5% (shorthand with percentage)</b></p>
+<p class="padding-2val-0-5pct">This paragraph has padding: 0 5%. No vertical padding, 5% horizontal padding on each side. Tests percentage in padding shorthand.</p>
+
+<h3>22E. Combined Percentage Properties</h3>
+
+<p><b>Test 22.16: text-indent: 5% + margin-left: 10% + margin-right: 10%</b></p>
+<p class="pct-indent-margin">This paragraph has text-indent: 5%, margin-left: 10%, and margin-right: 10%. The text block is narrowed by 20%, and the first line has an additional 5% indent. This is a common EPUB pattern. Adding more text to fill multiple lines so both the margin narrowing and first-line indent are clearly visible.</p>
+
+<h3>22F. Comparison: Percentage vs Absolute vs EmSpace</h3>
+
+<p><b>Test 22.17: Comparison — no CSS indent (EmSpace fallback)</b></p>
+<p>This paragraph has no text-indent CSS. It should display the default EmSpace character indent. Compare the indent size with the percentage tests above.</p>
+
+<p><b>Test 22.18: Comparison — text-indent: 20px (absolute)</b></p>
+<p class="indent-20px">This paragraph has text-indent: 20px (absolute pixels). Compare with text-indent: 5% above. On a 600px viewport, 5% (30px) should be slightly wider than this 20px indent.</p>
+
+<p><b>Test 22.19: Comparison — text-indent: 1em (relative to font)</b></p>
+<p class="indent-1em">This paragraph has text-indent: 1em (relative to font size). Compare with percentage indents above. The em-based indent scales with font size, while percentage indents scale with viewport width.</p>
+
+<!-- ============================================ -->
 <h2>END OF TESTS</h2>
 <!-- ============================================ -->
 
