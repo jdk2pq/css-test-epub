@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html>
+<!DOCTYPE html [
+  <!ENTITY nbsp "&#160;">
+]>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>CSS Parser Tests</title>
@@ -514,6 +516,64 @@
 
 <p><b>Test 22.19: Comparison — text-indent: 1em (relative to font)</b></p>
 <p class="indent-1em">This paragraph has text-indent: 1em (relative to font size). Compare with percentage indents above. The em-based indent scales with font size, while percentage indents scale with viewport width.</p>
+
+<!-- ============================================ -->
+<h2>23. NON-BREAKING SPACE (NBSP) TESTS</h2>
+<!-- ============================================ -->
+
+<p>These tests verify that non-breaking space characters (U+00A0, &amp;nbsp;) are treated as word separators. The nbsp character should render as a visible space between words, not merge them together. See issue #743.</p>
+
+<h3>23A. Basic NBSP Word Separation</h3>
+
+<p><b>Test 23.1: Simple nbsp between two words</b></p>
+<p>The words "hello&nbsp;world" use an nbsp between them. They should appear as "hello world" with a visible space, not "helloworld".</p>
+
+<p><b>Test 23.2: Single-character word + nbsp + word (Polish preposition pattern)</b></p>
+<p>Polish text: w&nbsp;domu means "at home". The "w" and "domu" should be separate words with a space between them.</p>
+
+<p><b>Test 23.3: Multiple nbsp-separated prepositions</b></p>
+<p>Polish text: i&nbsp;w&nbsp;miejscu means "and in place". All three words should be visually separated: "i w miejscu", not "iwmiejscu".</p>
+
+<p><b>Test 23.4: nbsp between longer words</b></p>
+<p>The phrase "Christopher&nbsp;Columbus" uses nbsp. It should render as "Christopher Columbus" with a normal space.</p>
+
+<h3>23B. NBSP with Inline Styling</h3>
+
+<p><b>Test 23.5: nbsp after styled word</b></p>
+<p>The word <b>bold</b>&nbsp;followed by a regular word. The bold word and the following word should be separated by a space.</p>
+
+<p><b>Test 23.6: nbsp before styled word</b></p>
+<p>A regular word&nbsp;<em>italic</em> after an nbsp. The words should be separated by a space.</p>
+
+<p><b>Test 23.7: nbsp between two styled words</b></p>
+<p><b>first</b>&nbsp;<em>second</em> — the bold and italic words should have a visible space between them.</p>
+
+<h3>23C. NBSP in Justified Text</h3>
+
+<p><b>Test 23.8: Justified paragraph with nbsp-separated words</b></p>
+<p class="align-justify">This justified paragraph contains words separated by nbsp: z&nbsp;nami i&nbsp;w&nbsp;domu. The prepositions "z", "i", and "w" should all appear as separate words with visible spaces. The justification algorithm should distribute space normally between all words including those separated by nbsp. Adding more text to ensure the paragraph wraps across multiple lines so justification is clearly visible.</p>
+
+<h3>23D. NBSP Entity Variants</h3>
+
+<p><b>Test 23.9: Numeric character reference &#38;#160;</b></p>
+<p>Words&#160;separated&#160;by&#160;numeric&#160;nbsp references. Each word should be visually separated.</p>
+
+<p><b>Test 23.10: Hex character reference &#38;#xA0;</b></p>
+<p>Words&#xA0;separated&#xA0;by&#xA0;hex&#xA0;nbsp references. Each word should be visually separated.</p>
+
+<h3>23E. NBSP Edge Cases</h3>
+
+<p><b>Test 23.11: Multiple consecutive nbsp characters</b></p>
+<p>Double&nbsp;&nbsp;space between words. Should show a wider gap (two spaces worth).</p>
+
+<p><b>Test 23.12: nbsp at start of paragraph</b></p>
+<p>&nbsp;This paragraph starts with an nbsp. It should not cause any rendering issues.</p>
+
+<p><b>Test 23.13: nbsp mixed with regular spaces</b></p>
+<p>Regular space then w&nbsp;domu then regular space. The nbsp between "w" and "domu" should render the same as a regular space visually.</p>
+
+<p><b>Test 23.14: Long paragraph with many nbsp occurrences</b></p>
+<p>W&nbsp;polskim&nbsp;języku, krótkie przyimki takie jak "w", "z", "i" często łączą się z&nbsp;następnym słowem za&nbsp;pomocą nbsp. Ten akapit testuje wiele wystąpień nbsp w&nbsp;dłuższym tekście, aby upewnić się, że wszystkie słowa są prawidłowo oddzielone i&nbsp;tekst jest czytelny.</p>
 
 <!-- ============================================ -->
 <h2>END OF TESTS</h2>
