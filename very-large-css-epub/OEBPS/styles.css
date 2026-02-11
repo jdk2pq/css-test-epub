@@ -1,0 +1,518 @@
+/* ============================================
+   CSS Parser Test Stylesheet
+   Tests all supported properties and units
+   ============================================ */
+
+/* ===========================================
+   TEXT-INDENT TESTS
+   =========================================== */
+
+.indent-0 {
+  text-indent: 0;
+}
+
+.indent-0px {
+  text-indent: 0px;
+}
+
+.indent-20px {
+  text-indent: 20px;
+}
+
+.indent-1em {
+  text-indent: 1em;
+}
+
+.indent-1-5em {
+  text-indent: 1.5em;
+}
+
+.indent-2rem {
+  text-indent: 2rem;
+}
+
+.indent-12pt {
+  text-indent: 12pt;
+}
+
+.indent-negative {
+  text-indent: -10px;
+}
+
+/* ===========================================
+   TEXT-INDENT PERCENTAGE TESTS
+   =========================================== */
+
+.indent-5pct {
+  text-indent: 5%;
+}
+
+.indent-10pct {
+  text-indent: 10%;
+}
+
+.indent-0pct {
+  text-indent: 0%;
+}
+
+.indent-2-5pct {
+  text-indent: 2.5%;
+}
+
+/* ===========================================
+   TEXT-ALIGN TESTS
+   =========================================== */
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+.align-start {
+  text-align: start;
+}
+
+.align-end {
+  text-align: end;
+}
+
+/* ===========================================
+   FONT-STYLE TESTS
+   =========================================== */
+
+.font-normal {
+  font-style: normal;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+.font-oblique {
+  font-style: oblique;
+}
+
+/* ===========================================
+   FONT-WEIGHT TESTS
+   =========================================== */
+
+.weight-normal {
+  font-weight: normal;
+}
+
+.weight-bold {
+  font-weight: bold;
+}
+
+.weight-bolder {
+  font-weight: bolder;
+}
+
+.weight-lighter {
+  font-weight: lighter;
+}
+
+.weight-400 {
+  font-weight: 400;
+}
+
+.weight-700 {
+  font-weight: 700;
+}
+
+.weight-900 {
+  font-weight: 900;
+}
+
+/* ===========================================
+   TEXT-DECORATION TESTS
+   =========================================== */
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.decoration-underline {
+  text-decoration: underline;
+}
+
+.decoration-line-underline {
+  text-decoration-line: underline;
+}
+
+/* ===========================================
+   MARGIN-TOP TESTS (Individual)
+   =========================================== */
+
+.margin-top-0 {
+  margin-top: 0;
+}
+
+.margin-top-10px {
+  margin-top: 10px;
+}
+
+.margin-top-20px {
+  margin-top: 20px;
+}
+
+.margin-top-1em {
+  margin-top: 1em;
+}
+
+.margin-top-2em {
+  margin-top: 2em;
+}
+
+.margin-top-1rem {
+  margin-top: 1rem;
+}
+
+.margin-top-12pt {
+  margin-top: 12pt;
+}
+
+/* ===========================================
+   MARGIN-BOTTOM TESTS (Individual)
+   =========================================== */
+
+.margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+.margin-bottom-10px {
+  margin-bottom: 10px;
+}
+
+.margin-bottom-1em {
+  margin-bottom: 1em;
+}
+
+/* ===========================================
+   MARGIN-LEFT TESTS (Individual)
+   =========================================== */
+
+.margin-left-0 {
+  margin-left: 0;
+}
+
+.margin-left-20px {
+  margin-left: 20px;
+}
+
+.margin-left-40px {
+  margin-left: 40px;
+}
+
+.margin-left-2em {
+  margin-left: 2em;
+}
+
+/* ===========================================
+   MARGIN-RIGHT TESTS (Individual)
+   =========================================== */
+
+.margin-right-0 {
+  margin-right: 0;
+}
+
+.margin-right-20px {
+  margin-right: 20px;
+}
+
+.margin-right-2em {
+  margin-right: 2em;
+}
+
+/* ===========================================
+   MARGIN PERCENTAGE TESTS
+   =========================================== */
+
+.margin-left-5pct {
+  margin-left: 5%;
+}
+
+.margin-right-5pct {
+  margin-right: 5%;
+}
+
+.margin-left-10pct {
+  margin-left: 10%;
+}
+
+.margin-top-5pct {
+  margin-top: 5%;
+}
+
+.margin-bottom-5pct {
+  margin-bottom: 5%;
+}
+
+.margin-lr-10pct {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* ===========================================
+   MARGIN SHORTHAND TESTS
+   =========================================== */
+
+/* 1 value: all sides */
+.margin-1val-10px {
+  margin: 10px;
+}
+
+.margin-1val-1em {
+  margin: 1em;
+}
+
+/* 2 values: vertical | horizontal */
+.margin-2val-10px-20px {
+  margin: 10px 20px;
+}
+
+.margin-2val-1em-2em {
+  margin: 1em 2em;
+}
+
+/* 3 values: top | horizontal | bottom */
+.margin-3val-10px-20px-30px {
+  margin: 10px 20px 30px;
+}
+
+/* 4 values: top | right | bottom | left */
+.margin-4val-10px-20px-30px-40px {
+  margin: 10px 20px 30px 40px;
+}
+
+.margin-4val-mixed {
+  margin: 5px 1em 10px 2em;
+}
+
+/* Mixed units with zeros */
+.margin-4val-zeros {
+  margin: 30px 0px 0 0;
+}
+
+.margin-4val-zero-mix {
+  margin: 0 20px 0 20px;
+}
+
+/* ===========================================
+   PADDING-TOP TESTS (Individual)
+   =========================================== */
+
+.padding-top-0 {
+  padding-top: 0;
+}
+
+.padding-top-10px {
+  padding-top: 10px;
+}
+
+.padding-top-1em {
+  padding-top: 1em;
+}
+
+/* ===========================================
+   PADDING-BOTTOM TESTS (Individual)
+   =========================================== */
+
+.padding-bottom-0 {
+  padding-bottom: 0;
+}
+
+.padding-bottom-10px {
+  padding-bottom: 10px;
+}
+
+/* ===========================================
+   PADDING-LEFT TESTS (Individual)
+   =========================================== */
+
+.padding-left-0 {
+  padding-left: 0;
+}
+
+.padding-left-20px {
+  padding-left: 20px;
+}
+
+.padding-left-2em {
+  padding-left: 2em;
+}
+
+/* ===========================================
+   PADDING-RIGHT TESTS (Individual)
+   =========================================== */
+
+.padding-right-0 {
+  padding-right: 0;
+}
+
+.padding-right-20px {
+  padding-right: 20px;
+}
+
+/* ===========================================
+   PADDING PERCENTAGE TESTS
+   =========================================== */
+
+.padding-left-5pct {
+  padding-left: 5%;
+}
+
+.padding-right-5pct {
+  padding-right: 5%;
+}
+
+.padding-lr-10pct {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* ===========================================
+   PADDING SHORTHAND TESTS
+   =========================================== */
+
+/* 1 value: all sides */
+.padding-1val-10px {
+  padding: 10px;
+}
+
+/* 2 values: vertical | horizontal */
+.padding-2val-10px-20px {
+  padding: 10px 20px;
+}
+
+/* 3 values: top | horizontal | bottom */
+.padding-3val-5px-15px-25px {
+  padding: 5px 15px 25px;
+}
+
+/* 4 values: top | right | bottom | left */
+.padding-4val-5px-10px-15px-20px {
+  padding: 5px 10px 15px 20px;
+}
+
+/* ===========================================
+   PERCENTAGE SHORTHAND TESTS
+   =========================================== */
+
+/* margin shorthand with percentage */
+.margin-2val-10px-5pct {
+  margin: 10px 5%;
+}
+
+/* padding shorthand with percentage */
+.padding-2val-0-5pct {
+  padding: 0 5%;
+}
+
+/* Combined percentage indent + margin */
+.pct-indent-margin {
+  text-indent: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+/* ===========================================
+   COMBINED PROPERTY TESTS
+   =========================================== */
+
+.combined-indent-align {
+  text-indent: 2em;
+  text-align: justify;
+}
+
+.combined-margin-padding {
+  margin: 10px 20px;
+  padding: 5px 15px;
+}
+
+.combined-all {
+  text-indent: 1em;
+  text-align: left;
+  font-style: italic;
+  font-weight: bold;
+  margin: 10px 30px;
+  padding: 5px 20px;
+}
+
+/* ===========================================
+   ELEMENT SELECTORS
+   =========================================== */
+
+blockquote {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-style: italic;
+}
+
+/* ===========================================
+   EDGE CASES
+   =========================================== */
+
+.edge-decimal-px {
+  margin-top: 10.5px;
+  text-indent: 15.75px;
+}
+
+.edge-large-values {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.edge-all-zeros {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  text-indent: 0;
+}
+
+/* ===========================================
+   NESTED BLOCK ELEMENT TESTS
+   Tests margin accumulation from parent containers
+   =========================================== */
+
+/* Parent div with margin-bottom, child h3 with no margin */
+.nested-div-margin {
+  margin-bottom: 2em;
+}
+
+.nested-h3-no-margin {
+  margin: 0;
+  text-align: center;
+}
+
+/* Parent div with margin-left, child p with additional margin-left */
+.nested-div-margin-left {
+  margin-left: 20px;
+}
+
+.nested-p-margin-left {
+  margin-left: 15px;
+}
+
+/* Double-nested divs with margins */
+.nested-outer {
+  margin-left: 15px;
+}
+
+.nested-inner {
+  margin-left: 15px;
+}
+
+.nested-content {
+  margin: 0;
+}
